@@ -148,12 +148,11 @@ job-agent/
 
 ## 4. Prerequisites
 
-| Requirement | Version | Notes                       |
-| ----------- | ------- | --------------------------- |
-| Python      | 3.11+   | `python --version` to check |
-| PostgreSQL  | 14+     | Or use Docker (see §6)      |
-| pip         | Latest  | `pip install --upgrade pip` |
-| git         | Any     | For cloning                 |
+| Requirement | Version |
+| ----------- | ------- |
+| Python      | 3.11+   |
+| PostgreSQL  | 14+     |
+| pip         | Latest  |
 
 ---
 
