@@ -151,7 +151,7 @@ job-agent/
 | Requirement | Version |
 | ----------- | ------- |
 | Python      | 3.11+   |
-| PostgreSQL  | 14+     |
+| PostgreSQL  | 16+     |
 | pip         | Latest  |
 
 ---
