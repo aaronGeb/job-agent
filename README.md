@@ -88,6 +88,79 @@ LinkedIn public /jobs/search page
 └─────────────────────┘
 ```
 
+### Database Schema
+
+```mermaid
+
+erDiagram
+
+    COMPANIES {
+        int id PK
+        string name
+        string website
+        string industry
+        string description
+        string logo_url
+        string headquarters
+        datetime created_at
+        datetime updated_at
+    }
+
+    JOBS {
+        int id PK
+        int company_id FK
+        string title
+        string location
+        string job_type
+        string seniority
+        string description
+        string source_url
+        string source_platform
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+    }
+
+    APPLICATIONS {
+        int id PK
+        int job_id FK
+        int resume_id FK
+        string status
+        string notes
+        string cover_letter
+        datetime applied_at
+        datetime created_at
+        datetime updated_at
+    }
+
+    RESUMES {
+        int id PK
+        string label
+        string content
+        string file_path
+        boolean is_default
+        datetime created_at
+        datetime updated_at
+    }
+
+    JOB_SCORES {
+        int id PK
+        int job_id FK
+        float score
+        float skill_match
+        float experience_match
+        float location_match
+        string reasoning
+        datetime created_at
+        datetime updated_at
+    }
+
+    COMPANIES ||--o{ JOBS : has
+    JOBS ||--o{ APPLICATIONS : receives
+    RESUMES ||--o{ APPLICATIONS : uses
+    JOBS ||--|| JOB_SCORES : scores
+```
+
 ## 3. Project Structure
 
 ```
